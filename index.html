@@ -608,6 +608,32 @@
   }
 
   /* =====================================================================
+     DOWNLOADS
+     ===================================================================== */
+  .dl-all {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--ink); color: var(--paper); text-decoration: none;
+    font-size: 14px; font-weight: 500; padding: 10px 16px; border-radius: 4px;
+  }
+  .dl-all:hover { background: var(--ink-soft); }
+  .dl-all .size { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fog); }
+  .dl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+  .dl-item { border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); overflow: hidden; display: flex; flex-direction: column; }
+  .dl-item .prev { aspect-ratio: 4 / 3; display: grid; place-items: center; background: var(--paper); border-bottom: 1px solid var(--rule); }
+  .dl-item .prev.ink { background: var(--ink); }
+  .dl-item .prev.mist { background: var(--mist); }
+  .dl-item .prev img { width: 40%; height: auto; display: block; }
+  .dl-item .prev img.wide { width: 72%; }
+  .dl-item .info { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .dl-item .name { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .dl-item .links { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dl-item .links a {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink);
+    text-decoration: none; border: 1px solid var(--rule); border-radius: 3px; padding: 3px 7px;
+  }
+  .dl-item .links a:hover { border-color: var(--ink); }
+
+  /* =====================================================================
      MOTION (the bounce + trajectory)
      ===================================================================== */
   .bounce-demo .panel-stage { min-height: 240px; padding: 24px 0; overflow: hidden; }
@@ -857,6 +883,7 @@
       <a href="#merch"><span class="num">08</span>in your hands</a>
       <a href="#digital"><span class="num">09</span>on screen</a>
       <a href="#donts"><span class="num">10</span>do not</a>
+      <a href="#downloads"><span class="num">11</span>downloads</a>
     </nav>
   </aside>
 
@@ -1625,6 +1652,96 @@
           </div>
           <span class="label">do not violate clear space</span>
         </div>
+      </div>
+    </section>
+
+    <!-- 11 — downloads -->
+    <section id="downloads">
+      <header>
+        <span class="mono num dark">11</span>
+        <h2 class="display">downloads.</h2>
+      </header>
+      <p class="lead">every mark on this page, as files. svg for anything that scales, png where it can't.</p>
+      <a class="dl-all" href="assets/floating-brand-assets.zip" download style="margin-top: 16px;">download everything (.zip) <span class="size">1.3 mb</span></a>
+
+      <h3 style="margin-top: 56px;">wordmark</h3>
+      <p>transparent background. paper is for ink and photo grounds.</p>
+      <div class="dl-grid">
+          <div class="dl-item">
+            <div class="prev"><img class="wide" src="assets/wordmark/floating-wordmark-ink-soft.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">wordmark, ink soft</span><div class="links"><a href="assets/wordmark/floating-wordmark-ink-soft.svg" download>svg</a><a href="assets/wordmark/floating-wordmark-ink-soft-800.png" download>png 800</a><a href="assets/wordmark/floating-wordmark-ink-soft-1600.png" download>png 1600</a><a href="assets/wordmark/floating-wordmark-ink-soft-3200.png" download>png 3200</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev"><img class="wide" src="assets/wordmark/floating-wordmark-ink.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">wordmark, ink</span><div class="links"><a href="assets/wordmark/floating-wordmark-ink.svg" download>svg</a><a href="assets/wordmark/floating-wordmark-ink-800.png" download>png 800</a><a href="assets/wordmark/floating-wordmark-ink-1600.png" download>png 1600</a><a href="assets/wordmark/floating-wordmark-ink-3200.png" download>png 3200</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev ink"><img class="wide" src="assets/wordmark/floating-wordmark-paper.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">wordmark, paper</span><div class="links"><a href="assets/wordmark/floating-wordmark-paper.svg" download>svg</a><a href="assets/wordmark/floating-wordmark-paper-800.png" download>png 800</a><a href="assets/wordmark/floating-wordmark-paper-1600.png" download>png 1600</a><a href="assets/wordmark/floating-wordmark-paper-3200.png" download>png 3200</a></div></div>
+          </div>
+      </div>
+
+      <h3 style="margin-top: 56px;">the point</h3>
+      <p>the dot on its own, and the round marks for avatars, stickers and anything under 12mm.</p>
+      <div class="dl-grid">
+          <div class="dl-item">
+            <div class="prev"><img src="assets/point/floating-point-ink-soft.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">point, ink soft</span><div class="links"><a href="assets/point/floating-point-ink-soft.svg" download>svg</a><a href="assets/point/floating-point-ink-soft-256.png" download>png 256</a><a href="assets/point/floating-point-ink-soft-512.png" download>png 512</a><a href="assets/point/floating-point-ink-soft-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev"><img src="assets/point/floating-point-ink.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">point, ink</span><div class="links"><a href="assets/point/floating-point-ink.svg" download>svg</a><a href="assets/point/floating-point-ink-256.png" download>png 256</a><a href="assets/point/floating-point-ink-512.png" download>png 512</a><a href="assets/point/floating-point-ink-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev ink"><img src="assets/point/floating-point-paper.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">point, paper</span><div class="links"><a href="assets/point/floating-point-paper.svg" download>svg</a><a href="assets/point/floating-point-paper-256.png" download>png 256</a><a href="assets/point/floating-point-paper-512.png" download>png 512</a><a href="assets/point/floating-point-paper-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev mist"><img src="assets/point/floating-point-avatar.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">round, paper</span><div class="links"><a href="assets/point/floating-point-avatar.svg" download>svg</a><a href="assets/point/floating-point-avatar-256.png" download>png 256</a><a href="assets/point/floating-point-avatar-512.png" download>png 512</a><a href="assets/point/floating-point-avatar-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev mist"><img src="assets/point/floating-point-avatar-dark.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">round, ink</span><div class="links"><a href="assets/point/floating-point-avatar-dark.svg" download>svg</a><a href="assets/point/floating-point-avatar-dark-256.png" download>png 256</a><a href="assets/point/floating-point-avatar-dark-512.png" download>png 512</a><a href="assets/point/floating-point-avatar-dark-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev mist"><img src="assets/point/floating-point-sticker.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">sticker, paper</span><div class="links"><a href="assets/point/floating-point-sticker.svg" download>svg</a><a href="assets/point/floating-point-sticker-256.png" download>png 256</a><a href="assets/point/floating-point-sticker-512.png" download>png 512</a><a href="assets/point/floating-point-sticker-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev mist"><img src="assets/point/floating-point-sticker-dark.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">sticker, ink</span><div class="links"><a href="assets/point/floating-point-sticker-dark.svg" download>svg</a><a href="assets/point/floating-point-sticker-dark-256.png" download>png 256</a><a href="assets/point/floating-point-sticker-dark-512.png" download>png 512</a><a href="assets/point/floating-point-sticker-dark-1024.png" download>png 1024</a></div></div>
+          </div>
+      </div>
+
+      <h3 style="margin-top: 56px;">icons</h3>
+      <p>22% corner radius on app icons. favicon.ico holds 16, 32 and 48.</p>
+      <div class="dl-grid">
+          <div class="dl-item">
+            <div class="prev mist"><img src="assets/icon/floating-app-icon.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">app icon, paper</span><div class="links"><a href="assets/icon/floating-app-icon.svg" download>svg</a><a href="assets/icon/floating-app-icon-180.png" download>png 180</a><a href="assets/icon/floating-app-icon-512.png" download>png 512</a><a href="assets/icon/floating-app-icon-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev mist"><img src="assets/icon/floating-app-icon-dark.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">app icon, ink</span><div class="links"><a href="assets/icon/floating-app-icon-dark.svg" download>svg</a><a href="assets/icon/floating-app-icon-dark-180.png" download>png 180</a><a href="assets/icon/floating-app-icon-dark-512.png" download>png 512</a><a href="assets/icon/floating-app-icon-dark-1024.png" download>png 1024</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev mist"><img src="assets/icon/favicon.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">favicon</span><div class="links"><a href="assets/icon/favicon.svg" download>svg</a><a href="assets/icon/favicon.ico" download>ico</a><a href="assets/icon/favicon-16.png" download>png 16</a><a href="assets/icon/favicon-32.png" download>png 32</a><a href="assets/icon/favicon-48.png" download>png 48</a><a href="assets/icon/favicon-180.png" download>png 180</a></div></div>
+          </div>
+      </div>
+
+      <h3 style="margin-top: 56px;">motion and email</h3>
+      <p>the bounce at 1600 x 600, and the small wordmark sized for signatures.</p>
+      <div class="dl-grid">
+          <div class="dl-item">
+            <div class="prev"><img class="wide" src="assets/floating.svg" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">the bounce</span><div class="links"><a href="assets/floating.mp4" download>mp4</a><a href="assets/floating.gif" download>gif</a></div></div>
+          </div>
+          <div class="dl-item">
+            <div class="prev"><img class="wide" src="assets/floating-wordmark@3x.png" alt="" loading="lazy"/></div>
+            <div class="info"><span class="name">email wordmark</span><div class="links"><a href="assets/floating-wordmark.gif" download>gif</a><a href="assets/floating-wordmark@2x.png" download>png 2x</a><a href="assets/floating-wordmark@3x.png" download>png 3x</a></div></div>
+          </div>
       </div>
     </section>
 

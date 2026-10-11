@@ -2,7 +2,7 @@
 """build the linkedin banners from the outlined wordmark.
 
 the word stands on the longitude line from the site, its period the last point on it, with the
-contacts under it in inter medium. writes assets/banner/ as svg + png at both linkedin sizes,
+contacts under it in inter medium. writes assets/banner/ as svg + png (1x and 2x) at both linkedin sizes,
 on paper and on ink.
 
 needs rsvg-convert (brew install librsvg), pillow, and inter installed as a system font
@@ -76,7 +76,10 @@ def banner(W, H, wm_h, gutter, line_y, gap, fs, min_gap, name, theme):
     OUT.mkdir(parents=True, exist_ok=True)
     svg_path = OUT / f"{name}.svg"
     svg_path.write_text(svg)
-    subprocess.run(["rsvg-convert", "-w", str(W), "-h", str(H), "-o", str(OUT / f"{name}.png"), str(svg_path)], check=True)
+    for scale in (1, 2):               # the 2x file stays sharp on high-density screens; linkedin scales it down
+        suffix = "" if scale == 1 else "@2x"
+        subprocess.run(["rsvg-convert", "-w", str(W * scale), "-h", str(H * scale),
+                        "-o", str(OUT / f"{name}{suffix}.png"), str(svg_path)], check=True)
     print(name)
 
 

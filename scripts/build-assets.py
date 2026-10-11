@@ -5,6 +5,7 @@ reads assets/floating.svg (the source of truth for the wordmark paths) and write
   assets/wordmark/   wordmark in ink soft, ink and paper, svg + png
   assets/point/      the point on its own, plus the round avatar and sticker marks
   assets/icon/       app icons and favicons
+  assets/banner/     linkedin banners (built by scripts/build-banners.py, packed here)
   assets/floating-brand-assets.zip   everything above plus the motion files
 
 needs rsvg-convert (brew install librsvg) and pillow.
@@ -105,7 +106,7 @@ Image.open(icon_dir / "favicon-48.png").save(icon_dir / "favicon.ico", sizes=[(1
 zip_path = ASSETS / "floating-brand-assets.zip"
 zip_path.unlink(missing_ok=True)
 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-    for folder in ("wordmark", "point", "icon"):
+    for folder in ("wordmark", "point", "icon", "banner"):
         for f in sorted((ASSETS / folder).iterdir()):
             z.write(f, f"floating-brand-assets/{folder}/{f.name}")
     extras = {
